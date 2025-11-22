@@ -1,0 +1,239 @@
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <!-- Basic Page Needs -->
+    <meta charset="UTF-8" />
+    <title>أناكوندا</title>
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="دليل شامل وتفاعلي يضم أكثر من 100 أداة للأمن السيبراني، مع شروحات مفصلة، أوامر تطبيقية، وسلاسل هجومية واقعية. مرجعك الأول لاختبار الاختراق." />
+    <meta name="keywords" content="الأمن السيبراني, اختبار الاختراق, أدوات اختراق, Nmap, Metasploit, Burp Suite, Wireshark, OSINT, فحص الثغرات, استغلال, دليل أمني, infosec, دليل أناكوندا" />
+    <meta name="author" content="Mohamed Arsinek" />
+
+    <!-- Open Graph Meta Tags (for social media previews) -->
+    <meta property="og:title" content="الأناكوندا: الدليل الشامل لأدوات الأمن السيبراني" />
+    <meta property="og:description" content="دليل شامل وتفاعلي يضم أكثر من 100 أداة للأمن السيبراني، مع شروحات مفصلة، أوامر تطبيقية، وسلاسل هجومية واقعية. مرجعك الأول لاختبار الاختراق." />
+    <meta property="og:image" content="https://i.imgur.com/g3d24sJ.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.anaconda-security-guide.com/" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="الأناكوندا: الدليل الشامل لأدوات الأمن السيبراني" />
+    <meta name="twitter:description" content="دليل شامل وتفاعلي يضم أكثر من 100 أداة للأمن السيبراني، مع شروحات مفصلة، أوامر تطبيقية، وسلاسل هجومية واقعية. مرجعك الأول لاختبار الاختراق." />
+    <meta name="twitter:image" content="https://i.imgur.com/g3d24sJ.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="https://ik.imagekit.io/rn0uichl8o/student-photo.jpg" />
+    <link rel="apple-touch-icon" href="https://ik.imagekit.io/rn0uichl8o/student-photo.jpg" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohamed Arsinek",
+      "jobTitle": "Programmer & Designer",
+      "description": "مبرمج ومصمم شغوف متخصص في إنشاء تطبيقات ويب وأدوات للأمن السيبراني قوية وبديهية.",
+      "image": "https://ik.imagekit.io/rn0uichl8o/student-photo.jpg",
+      "url": "https://mohammed-hussien.netlify.app",
+      "sameAs": [
+        "https://github.com/kl0l69",
+        "https://facebook.com/nq703",
+        "mailto:ayrn194@gmail.com"
+      ]
+    }
+    </script>
+
+    <!-- Styles and Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="new.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+      
+      /* CSS Variables for Theming */
+      :root {
+        --font-primary: 'Tajawal', sans-serif;
+      }
+      
+      .theme-dark {
+        --color-bg-primary: #0D1117;
+        --color-bg-secondary: #161b22;
+        --color-border-primary: #30363d;
+        --color-text-primary: #c9d1d9;
+        --color-text-secondary: #8b949e;
+        --color-text-heading: #ffffff;
+        --color-accent: #22d3ee; /* cyan-400 */
+        --color-accent-hover: #67e8f9; /* cyan-300 */
+        --color-accent-subtle-bg: rgba(34, 211, 238, 0.1);
+        --color-accent-subtle-hover-bg: rgba(34, 211, 238, 0.2);
+        --color-danger: #f87171; /* red-400 */
+        --color-danger-text: #fca5a5; /* red-300 */
+        --color-danger-subtle-bg: rgba(239, 68, 68, 0.3);
+        --color-danger-border: rgba(239, 68, 68, 0.4);
+        --shadow-accent: 0 0 25px rgba(34, 211, 238, 0.1);
+        --green-accent: #4ade80; /* green-400 */
+        --code-bg: #161b22;
+        --code-text: #e6edf3;
+      }
+
+      .theme-light {
+        --color-bg-primary: #ffffff;
+        --color-bg-secondary: #f6f8fa;
+        --color-border-primary: #d0d7de;
+        --color-text-primary: #24292f;
+        --color-text-secondary: #57606a;
+        --color-text-heading: #1f2328;
+        --color-accent: #0550ae;
+        --color-accent-hover: #0969da;
+        --color-accent-subtle-bg: rgba(9, 105, 218, 0.1);
+        --color-accent-subtle-hover-bg: rgba(9, 105, 218, 0.2);
+        --color-danger: #cf222e;
+        --color-danger-text: #a40e26;
+        --color-danger-subtle-bg: rgba(207, 34, 46, 0.1);
+        --color-danger-border: rgba(207, 34, 46, 0.4);
+        --shadow-accent: 0 0 25px rgba(9, 105, 218, 0.1);
+        --green-accent: #1f883d;
+        --code-bg: #f6f8fa;
+        --code-text: #24292f;
+      }
+
+      .theme-cyberpunk {
+        --color-bg-primary: #0c0c1b;
+        --color-bg-secondary: #1a1a36;
+        --color-border-primary: #4b0082;
+        --color-text-primary: #00ff00;
+        --color-text-secondary: #8a2be2;
+        --color-text-heading: #ff00ff;
+        --color-accent: #fdfc74;
+        --color-accent-hover: #fff;
+        --color-accent-subtle-bg: rgba(253, 252, 116, 0.1);
+        --color-accent-subtle-hover-bg: rgba(253, 252, 116, 0.2);
+        --color-danger: #ff5555;
+        --color-danger-text: #ff5555;
+        --color-danger-subtle-bg: rgba(255, 85, 85, 0.2);
+        --color-danger-border: rgba(255, 85, 85, 0.4);
+        --shadow-accent: 0 0 25px rgba(253, 252, 116, 0.2);
+        --green-accent: #00ff00;
+        --code-bg: rgba(75, 0, 130, 0.3);
+        --code-text: #00ff00;
+      }
+
+      .theme-dracula {
+        --color-bg-primary: #282a36;
+        --color-bg-secondary: #383a59;
+        --color-border-primary: #44475a;
+        --color-text-primary: #f8f82;
+        --color-text-secondary: #bd93f9;
+        --color-text-heading: #50fa7b;
+        --color-accent: #ff79c6;
+        --color-accent-hover: #ff92d0;
+        --color-accent-subtle-bg: rgba(255, 121, 198, 0.1);
+        --color-accent-subtle-hover-bg: rgba(255, 121, 198, 0.2);
+        --color-danger: #ff5555;
+        --color-danger-text: #ff5555;
+        --color-danger-subtle-bg: rgba(255, 85, 85, 0.2);
+        --color-danger-border: rgba(255, 85, 85, 0.4);
+        --shadow-accent: 0 0 25px rgba(255, 121, 198, 0.2);
+        --green-accent: #50fa7b;
+        --code-bg: #282a36;
+        --code-text: #f8f8f2;
+      }
+
+      .theme-solarized-light {
+        --color-bg-primary: #fdf6e3;
+        --color-bg-secondary: #eee8d5;
+        --color-border-primary: #93a1a1;
+        --color-text-primary: #657b83;
+        --color-text-secondary: #586e75;
+        --color-text-heading: #002b36;
+        --color-accent: #268bd2;
+        --color-accent-hover: #2aa198;
+        --color-accent-subtle-bg: rgba(38, 139, 210, 0.1);
+        --color-accent-subtle-hover-bg: rgba(38, 139, 210, 0.2);
+        --color-danger: #dc322f;
+        --color-danger-text: #dc322f;
+        --color-danger-subtle-bg: rgba(220, 50, 47, 0.1);
+        --color-danger-border: rgba(220, 50, 47, 0.4);
+        --shadow-accent: 0 0 25px rgba(38, 139, 210, 0.2);
+        --green-accent: #859900;
+        --code-bg: #eee8d5;
+        --code-text: #073642;
+      }
+      
+      body {
+        font-family: var(--font-primary);
+        overscroll-behavior: none;
+      }
+
+      /* Scrollbar Styling */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--color-bg-primary);
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: var(--color-border-primary);
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--color-text-secondary);
+      }
+      
+      /* Main content view animations */
+      @keyframes view-fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-view-enter {
+        animation: view-fade-in 0.4s ease-out forwards;
+      }
+
+      @keyframes view-fade-out {
+        from { opacity: 1; transform: translateY(0); }
+        to { opacity: 0; transform: translateY(-10px); }
+      }
+      .animate-view-exit {
+        animation: view-fade-out 0.3s ease-in forwards;
+      }
+
+      /* Staggered item enter animation (for cards, list items, etc.) */
+      @keyframes staggered-item-fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(20px) scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .animate-stagger-item {
+        animation: staggered-item-fade-in 0.5s ease-out forwards;
+        opacity: 0; /* Start hidden */
+        will-change: transform, opacity;
+      }
+
+    </style>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="theme-dark">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

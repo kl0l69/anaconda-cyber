@@ -1,0 +1,15 @@
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--color-accent-subtle-bg);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(34, 211, 238, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0);
+  }
+}
+
+.copy-button-pulse {
+  animation: pulse 2.5s infinite;
+}
